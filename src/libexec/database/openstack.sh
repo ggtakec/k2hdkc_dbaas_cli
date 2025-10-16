@@ -393,11 +393,7 @@ get_op_service_ep()
 		#
 		# Compare
 		#
-
-		# [NOTE]
-		# Since the condition becomes complicated, use "X"(temporary word).
-		#
-		if [ "X${_DBAAS_OP_CATALOG_NAME}" = "X${_DBAAS_OP_SERVICE_NAME}" ] && [ "X${_DBAAS_OP_CATALOG_TYPE}" = "X${_DBAAS_OP_SERVICE_TYPE}" ]; then
+		if [ -n "${_DBAAS_OP_CATALOG_NAME}" ] && [ -n "${_DBAAS_OP_SERVICE_NAME}" ] && [ "${_DBAAS_OP_CATALOG_NAME}" = "${_DBAAS_OP_SERVICE_NAME}" ] && [ -n "${_DBAAS_OP_CATALOG_TYPE}" ] && [ -n "${_DBAAS_OP_SERVICE_TYPE}" ] && [ "${_DBAAS_OP_CATALOG_TYPE}" = "${_DBAAS_OP_SERVICE_TYPE}" ]; then
 			#
 			# Found, get endpoints for service
 			#

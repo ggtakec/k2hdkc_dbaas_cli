@@ -326,11 +326,7 @@ create_dummy_dbaas_response_sub()
 				#
 				# Security Group Information
 				#
-
-				# [NOTE]
-				# Since the condition becomes complicated, use "X"(temporary word).
-				#
-				if [ "X${K2HR3CLI_SUBCOMMAND}" = "X${_DATABASE_COMMAND_SUB_CREATE}" ]; then
+				if [ -n "${K2HR3CLI_SUBCOMMAND}" ] && [ -n "${_DATABASE_COMMAND_SUB_CREATE}" ] && [ "${K2HR3CLI_SUBCOMMAND}" = "${_DATABASE_COMMAND_SUB_CREATE}" ]; then
 					#
 					# In the case of Create command, a non-existent response is returned.
 					#
